@@ -18,7 +18,7 @@ class Communication:
 
     
     def __receive(self):
-        socket_receive = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        socket_receive = socket.socket(socket.AF_INET, socket.SOCK_DGRAM, socket.IPPROTO_UDP)
         socket_receive.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
         socket_receive.setsockopt(socket.IPPROTO_IP, socket.IP_MULTICAST_TTL, 128)
         socket_receive.setsockopt(socket.IPPROTO_IP, socket.IP_MULTICAST_LOOP, 1)
