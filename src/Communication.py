@@ -1,7 +1,7 @@
 from re import A
 import socket
 import sys
-sys.path.insert(0,"src/protos")
+sys.path.insert(0,"/home/murilo/Documentos/vsss_ws/FIRA_Class/src/protos")
 
 from common_pb2 import Frame
 from packet_pb2 import Environment, Packet
