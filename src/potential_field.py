@@ -31,7 +31,6 @@ class potential_field:
         return self.__theta() - self.car.orient()
 
 ################################################POTENTIAL########################################################
-
     def __enemies(self):
         if self.team == True:
             return False
