@@ -13,7 +13,6 @@ class potential_field:
 
         self.car_x = self.car.x()
         self.car_y = self.car.y()
-
         self.diff_x = self.val_x - self.car_x
         self.diff_y = self.val_y - self.car_y
 
@@ -41,10 +40,11 @@ class potential_field:
         enemie_team = self.__enemies()
 
         enemie_0 = Robot(0,enemie_team)
-        enemie_1 = Robot(0,enemie_team)
-        enemie_2 = Robot(0,enemie_team)
+        enemie_1 = Robot(1,enemie_team)
+        enemie_2 = Robot(2,enemie_team)
+        
 
-        return [(enemie_0.x, enemie_0.y), (enemie_1.x, enemie_1.y), (enemie_2.x, enemie_2.y)]
+        return [(enemie_0.x(), enemie_0.y()), (enemie_1.x(), enemie_1.y()), (enemie_2.x(), enemie_2.y())]
 
     def __modulo(self, position):
         position_x = position[0]
@@ -66,7 +66,7 @@ class potential_field:
         enimies = self.__enemies_position()
         enimies = enimies[car]
 
-        diff_x = enimies[0] - self.car_x
+        diff_x = enimies[1] - self.car_x
 
         if diff_x > 0.0:
             return ([1,3])
@@ -82,6 +82,8 @@ class potential_field:
             car += 1
             if modulo < 0.35:
                 return self.__deviation(car, modulo)
+            else:
+                return [1,1]
 
 ####################################################################################################################
 
